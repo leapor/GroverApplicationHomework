@@ -394,6 +394,6 @@ exitscript(ansbrand)
 selbrand=select_brand(ansbrand,indtype,allbrands)
 indtypebrand=selbrand[0]
 
-ansprice=input("How much money are you willing to spend?\n---> ")
+ansprice=input("How much money are you willing to spend per month?\n---> ")
 exitscript(ansprice)
 selprice=select_price(ansprice,indtypebrand,indtype,allbrands,allproductnames,allpaymentplans)
