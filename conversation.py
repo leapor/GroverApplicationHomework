@@ -98,7 +98,13 @@ def select_product_for_given_average_price(avprice,indtypebrand,indtype,allbrand
         if yes_no(anssel):
             print("Great! Please, procede to checkout. Good bye!")
         else:
-            print("I'm sorry you don't like it. Good bye!")
+            print("The other products that fit your requirements are:")
+            for i in range(0,len(indtypebrand)):
+                print("%2d  %10s  %70s for %5.2f euros/month" % (i+1,allbrands[indtypebrand[i]],\
+                    allproductnames[indtypebrand[i]],allpaymentplans[indtypebrand[i]]))
+            anssel=input('''Would you like to choose any of them? Please type the product number or "bye" to leave the chat .\n---> ''')
+            exitscript(anssel)
+            select_product_by_number(anssel,indtypebrand,allbrands,allproductnames,allpaymentplans)
         
     else:                               # more than one products with the suitable price
         print(len(indtypebrandprice)," products fit your requirements:")
